@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnChanges,
-  EventEmitter,
-  Input,
-  Output
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 @Component({
   selector: 'pm-star',

@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
 
   products: IProduct[];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   performFilter(filterBy: string) {
     filterBy = filterBy.toLocaleLowerCase();

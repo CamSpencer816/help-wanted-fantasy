@@ -1,6 +1,5 @@
 export const environment = {
   production: false,
-  productUrl: 'http://localhost:7071/api/products/'
+  productUrl: 'http://localhost:7071/api/products/',
+  getRandomJobPostingUrl: 'http://localhost:7071/api/get-random-job-posting/'
 };
-
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.

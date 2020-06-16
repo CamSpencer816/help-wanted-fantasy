@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-import { IProduct } from './product';
 import { environment } from '../../environments/environment';
+import { IProduct } from './product';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private productUrl = environment.productUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts() {
     return this.http
