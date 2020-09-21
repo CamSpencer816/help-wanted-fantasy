@@ -19,12 +19,6 @@ export class ProductService {
       .pipe(catchError(this.handleError));
   }
 
-  getProducts() {
-    return this.http
-      .get<IProduct[]>(this.productUrl)
-      .pipe(catchError(this.handleError));
-  }
-
   handleError(err: HttpErrorResponse) {
     return throwError(err.statusText);
   }
