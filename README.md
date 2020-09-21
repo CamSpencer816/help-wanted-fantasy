@@ -100,6 +100,8 @@ In the Azure Functions explorer, expand your app then expand the **Functions**
 node. Right click on the function that you just deployed and choose
 **Copy function URL**. You'll need that in the next step. :)
 
+Add App settings that match `local.settings.json` and also set CORS for `*` (Remove other CORS)
+
 ## Deploy the Angular App
 
 Before deploying, you need to update `./src/environments/environment.prod.json`

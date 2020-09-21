@@ -3,19 +3,17 @@ import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { IJobPosting } from './job-posting';
-import { IProduct } from './product';
+import { IRefinancingProduct } from './refinancing-product';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  private productUrl = environment.productUrl;
-  private jobPostingUrl = environment.getRandomJobPostingUrl;
+  private getRefinancingProductUrl = environment.getRandomJobPostingUrl;
 
   constructor(private http: HttpClient) { }
 
-  getJobPostings() {
+  getRefinancingProduct() {
     return this.http
-      .get<IJobPosting[]>(this.jobPostingUrl)
+      .get<IRefinancingProduct[]>(this.getRefinancingProductUrl)
       .pipe(catchError(this.handleError));
   }
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IJobPosting } from './job-posting';
-import { IProduct } from './product';
 import { ProductService } from './product.service';
+import { IRefinancingProduct } from './refinancing-product';
 
 @Component({
   selector: 'pm-products',
@@ -9,58 +8,22 @@ import { ProductService } from './product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  //private _listFilter: string;
-
   pageTitle = 'Refinance Information';
   imageWidth = 50;
   imageMargin = 2;
-  jobPostings: IJobPosting[];
-  // filteredProducts: IProduct[];
+  refiancingProducts: IRefinancingProduct[];
   errorMessage = '';
-
-  // public get listFilter(): string {
-  //   return this._listFilter;
-  // }
-  // public set listFilter(v: string) {
-  //   this._listFilter = v;
-  //   this.filteredProducts = this.listFilter
-  //     ? this.performFilter(this.listFilter)
-  //     : this.products;
-  // }
-
-  // products: IProduct[];
 
   constructor(private productService: ProductService) { }
 
-  // performFilter(filterBy: string) {
-  //   filterBy = filterBy.toLocaleLowerCase();
-
-  //   return this.products.filter((product: IProduct) => {
-  //     return product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1;
-  //   });
-  // }
-
   ngOnInit(): void {
-    this.productService.getJobPostings().subscribe(
-      jobPostings => {
-        this.jobPostings = jobPostings;
+    this.productService.getRefinancingProduct().subscribe(
+      refinancingProducts => {
+        this.refiancingProducts = refinancingProducts;
       },
       error => {
         this.errorMessage = <any>error;
       }
     );
-    // this.productService.getProducts().subscribe(
-    //   products => {
-    //     this.products = products;
-    //     this.filteredProducts = this.products;
-    //   },
-    //   error => {
-    //     this.errorMessage = <any>error;
-    //   }
-    // );
   }
-
-  // onRatingClicked(message: string): void {
-  //   this.pageTitle = 'Product List: ' + message;
-  // }
 }
