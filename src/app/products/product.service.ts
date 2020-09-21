@@ -7,7 +7,7 @@ import { IRefinancingProduct } from './refinancing-product';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  private getRefinancingProductUrl = environment.getRandomJobPostingUrl;
+  private getRefinancingProductUrl = environment.getRefinancingProductUrl;
 
   constructor(private http: HttpClient) { }
 
