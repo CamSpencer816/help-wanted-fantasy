@@ -11,7 +11,7 @@ import { ProductService } from './product.service';
 export class ProductListComponent implements OnInit {
   //private _listFilter: string;
 
-  pageTitle = 'Job Posting';
+  pageTitle = 'Refinance Information';
   imageWidth = 50;
   imageMargin = 2;
   jobPostings: IJobPosting[];
